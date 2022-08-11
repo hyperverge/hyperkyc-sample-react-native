@@ -1,4 +1,4 @@
-ntegration steps to create workflow and start jamming :
+Integration steps to create workflow and start jamming :
 
 ## Installation
 
