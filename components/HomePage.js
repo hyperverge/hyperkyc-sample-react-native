@@ -35,9 +35,12 @@ function HomePage(props) {
   inputsDictionary["image"] = "image-path"
 
   
-  configDictionary["inputs"] = inputsDictionary
+  configDictionary["inputs"] = inputsDictionary // Optional
+
   
-  configDictionary["workflowId"] = "workflow_id"
+  // configDictionary["defaultLangCode"] = "vn"
+  
+  configDictionary["workflowId"] = "workflow_id"  // mandatory property
   
 
   // Launch HyperKYC on buttonClick and handle the results in - ResultsPage

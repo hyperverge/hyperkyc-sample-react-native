@@ -4,22 +4,24 @@ import FailurePage from "./FailurePage";
 import SuccessPage from "./SuccessPage";
 
 
-
+function ResultsPage(props) {
+   // parse the results into a JSON object and use it according to your useCase
+   let results = props.route.params; // parse the response here
   return (
     <SafeAreaView style={styles.container}>
-        {results.response.status == 'success'? 
+        {results.response.status == 'auto_approved'? 
         // handle the success case 
           <SuccessPage title = {"Workflow Successful"} resultsObject = {results.response}/>:
         // handle the failed cases
-          (results.response.status == 'cancelled'? 
-            <FailurePage errorMessage = {results.reason} title={"WorkFlow Cancelled By User"}/> :
-            <FailurePage errorMessage = {results.reason} title={"WorkFlow failed"}/>)
+          (results.response.status == 'user_cancelled'? 
+            <FailurePage errorMessage = {results.response.errorMessage} title={"WorkFlow Cancelled By User"}/> :
+            <FailurePage errorMessage = {results.response.errorMessage} title={"WorkFlow failed"}/>)
         }
         
     </SafeAreaView>
   );
-}
 
+  }
 const styles = StyleSheet.create({
   container: {
     marginTop: 30,

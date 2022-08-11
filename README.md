@@ -56,6 +56,7 @@ allprojects {
               configDictionary["appKey"] = appKey
     											or 
               configDictionary["accessToken"] = accessToken
+              <!-- configDictionary["defaultLangCode"] = "" -->
               
               var inputsDictionary = {};
               inputsDictionary["bvnNumber"] = "number-123"
